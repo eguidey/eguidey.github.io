@@ -1,22 +1,19 @@
-# ------------------------------------------------------------
-#  EDIT THESE VALUES — everything on the site reads from here
-# ------------------------------------------------------------
-title: "Your Name Blog"
-author: "Your Name"
-description: "Writing about the things I build, break, and learn."
-tagline: "Hello world"            # heading on the sidebar bio card
-bio: "Hi, I'm Your Name. I write about what I'm learning and building. Change this text in _config.yml."
 
-# If the repo is named <username>.github.io, leave baseurl empty.
-# If it's any other repo name (e.g. "blog"), set baseurl: "/blog"
-url: "https://YOUR-USERNAME.github.io"
+
+title: "Ian Guidry"
+author: "Ian Guidry"
+description: "Cybersecurity analyst writing about threat detection, incident response, and defending real networks."
+tagline: "Hi, I'm Ian"            # heading on the sidebar bio card
+bio: "I'm a cybersecurity analyst focused on finding threats before they become incidents. I work with SIEM tools and log data to spot suspicious behavior, run vulnerability scans and prioritize what to fix first, and follow incident response from first alert to root cause. This site is where I document my labs, investigations, and what I'm learning along the way."
+
+url: "https://eguidey.github.io"
 baseurl: ""
 
 social:
-  github: "https://github.com/YOUR-USERNAME"
-  linkedin: ""      # e.g. https://linkedin.com/in/you
+  github: "https://github.com/eguidey"
+  linkedin: "https://www.linkedin.com/in/ian-guidry-5823ab25b/"
   youtube: ""
-  email: ""         # e.g. you@example.com
+  email: "ianguidryn1@gmail.com"
 
 nav:
   - title: "About Me"
@@ -24,7 +21,7 @@ nav:
   - title: "Tags"
     url: "/tags/"
 
-featured_count: 5      # how many post cards show on the home page
+featured_count: 5      
 
 # ------------------------------------------------------------
 permalink: /:categories/:year/:month/:day/:title.html

@@ -2,7 +2,9 @@ title: "Ian Guidry"
 author: "Ian Guidry"
 description: "Cybersecurity analyst writing about threat detection, incident response, and defending real networks."
 tagline: "Hi, I'm Ian"
-bio: "I'm a cybersecurity analyst focused on finding threats before they become incidents. I work with SIEM tools and log data to spot suspicious behavior, run vulnerability scans and prioritize what to fix first, and follow incident response from first alert to root cause. This site is where I document my labs, investigations, and what I'm learning along the way."
+bio: "I'm a cybersecurity analyst focused on threat detection, vulnerability assessment, incident response, and understanding how attacks happen. I work with SIEM platforms and security logs to investigate suspicious activity, identify vulnerabilities, and trace incidents from the initial alert through root-cause analysis.
+
+"A major part of my learning comes from building and maintaining my own cybersecurity homelab. Using Proxmox, Docker, and containerized environments, Im creating a virtualized lab where I can deploy systems, build networks, simulate attacks, collect security telemetry, and test defensive tools in a controlled environment. I'm continually expanding the lab to explore areas such as SIEM, network security, vulnerability management, detection engineering, and offensive security." ."
 
 url: "https://eguidey.github.io"
 baseurl: ""

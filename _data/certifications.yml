@@ -1,0 +1,24 @@
+
+- name: "CompTIA Security Analytics Professional (CSAP)"
+  short: "CSAP"
+  issuer: "CompTIA"
+  date: "April 2026"
+  verify: "https://www.credly.com/badges/0b5893aa-c8e1-4ec6-ade9-823a558d6963"
+
+- name: "CompTIA Cybersecurity Analyst (CySA+)"
+  short: "CySA+"
+  issuer: "CompTIA"
+  date: "April 2026"
+  verify: "https://www.credly.com/badges/65c5d3ac-2b30-4f1f-a5f1-c46007c03527"
+
+- name: "CompTIA Security+"
+  short: "Security+"
+  issuer: "CompTIA"
+  date: "April 2025"
+  verify: "https://www.credly.com/badges/e34c0509-dd0c-490e-97c2-b556eea1e1f1"
+
+- name: "CompTIA Network+"
+  short: "Network+"
+  issuer: "CompTIA"
+  date: "May 2026"
+  verify: "https://www.credly.com/badges/b0ee2b68-9568-47c2-9d39-c9f79991da18"

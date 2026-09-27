@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="post" data-title="{{ page.title | escape }}" data-url="{{ page.url | relative_url }}">
+  <header class="post-header">
+    <div class="meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      • {{ page.author | default: site.author }}
+      <span class="badge">{% include reading-time.html content=content %}</span>
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}<p class="lede">{{ page.description }}</p>{% endif %}
+    <div class="post-tags">{% for t in page.tags %}<a class="tag small" href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">{{ t }}</a>{% endfor %}</div>
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    {% include share.html post=page %}
+    <nav class="post-nav">
+      {% if page.previous %}<a href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>{% else %}<span></span>{% endif %}
+      {% if page.next %}<a href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>{% endif %}
+    </nav>
+  </footer>
+</article>

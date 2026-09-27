@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <a class="footer-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <p>{{ site.description }}</p>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      {% include social-links.html %}
+    </div>
+  </div>
+  <div class="container copyright">
+    © {{ site.time | date: '%Y' }} {{ site.author }}. Built with Jekyll &amp; GitHub Pages.
+  </div>
+</footer>

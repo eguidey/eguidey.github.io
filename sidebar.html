@@ -1,0 +1,23 @@
+<section class="widget bio">
+  <h3>{{ site.tagline }}</h3>
+  <p>{{ site.bio }}</p>
+  <a class="more" href="{{ '/about/' | relative_url }}">Read more →</a>
+  {% include social-links.html %}
+</section>
+
+<section class="widget">
+  <h3>Recently Viewed</h3>
+  <ol id="recently-viewed" class="recent">
+    <li class="muted">No articles viewed yet</li>
+  </ol>
+</section>
+
+<section class="widget">
+  <h3>Tags</h3>
+  <div class="tag-cloud">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      <a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}"><span class="count">{{ tag[1].size }}</span>{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+</section>

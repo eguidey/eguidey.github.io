@@ -1,0 +1,15 @@
+---
+layout: page
+title: Certifications
+permalink: /certifications/
+---
+<div class="cert-grid">
+{% for c in site.data.certifications %}
+<div class="cert-card">
+<div class="cert-issuer">{{ c.issuer }}</div>
+<h3>{{ c.name }}</h3>
+<div class="cert-date">Earned {{ c.date }}</div>
+{% if c.verify and c.verify != "" %}<a class="cert-verify" href="{{ c.verify }}" target="_blank" rel="noopener">Verify credential →</a>{% endif %}
+</div>
+{% endfor %}
+</div>

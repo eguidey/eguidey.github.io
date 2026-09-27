@@ -1,0 +1,38 @@
+# ------------------------------------------------------------
+#  EDIT THESE VALUES — everything on the site reads from here
+# ------------------------------------------------------------
+title: "Your Name Blog"
+author: "Your Name"
+description: "Writing about the things I build, break, and learn."
+tagline: "Hello world"            # heading on the sidebar bio card
+bio: "Hi, I'm Your Name. I write about what I'm learning and building. Change this text in _config.yml."
+
+# If the repo is named <username>.github.io, leave baseurl empty.
+# If it's any other repo name (e.g. "blog"), set baseurl: "/blog"
+url: "https://YOUR-USERNAME.github.io"
+baseurl: ""
+
+social:
+  github: "https://github.com/YOUR-USERNAME"
+  linkedin: ""      # e.g. https://linkedin.com/in/you
+  youtube: ""
+  email: ""         # e.g. you@example.com
+
+nav:
+  - title: "About Me"
+    url: "/about/"
+  - title: "Tags"
+    url: "/tags/"
+
+featured_count: 5      # how many post cards show on the home page
+
+# ------------------------------------------------------------
+permalink: /:categories/:year/:month/:day/:title.html
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

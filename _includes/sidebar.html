@@ -3,6 +3,18 @@
   <p>{{ site.bio }}</p>
   <a class="more" href="{{ '/about/' | relative_url }}">Read more →</a>
   {% include social-links.html %}
+
+  {% if site.data.certifications %}
+  <div class="bio-certs">
+    <h4>Certifications</h4>
+    <div class="cert-badges">
+      {% for c in site.data.certifications %}
+      <a class="cert-badge" href="{{ '/certifications/' | relative_url }}">{{ c.short | default: c.name }}</a>
+      {% endfor %}
+    </div>
+    <a class="more" href="{{ '/certifications/' | relative_url }}">View certifications →</a>
+  </div>
+  {% endif %}
 </section>
 
 <section class="widget">

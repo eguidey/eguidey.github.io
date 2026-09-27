@@ -1,9 +1,7 @@
-
-
 title: "Ian Guidry"
 author: "Ian Guidry"
 description: "Cybersecurity analyst writing about threat detection, incident response, and defending real networks."
-tagline: "Hi, I'm Ian"            # heading on the sidebar bio card
+tagline: "Hi, I'm Ian"
 bio: "I'm a cybersecurity analyst focused on finding threats before they become incidents. I work with SIEM tools and log data to spot suspicious behavior, run vulnerability scans and prioritize what to fix first, and follow incident response from first alert to root cause. This site is where I document my labs, investigations, and what I'm learning along the way."
 
 url: "https://eguidey.github.io"
@@ -21,9 +19,8 @@ nav:
   - title: "Tags"
     url: "/tags/"
 
-featured_count: 5      
+featured_count: 5
 
-# ------------------------------------------------------------
 permalink: /:categories/:year/:month/:day/:title.html
 markdown: kramdown
 plugins:

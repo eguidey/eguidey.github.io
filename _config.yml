@@ -2,7 +2,7 @@ title: "Ian Guidry"
 author: "Ian Guidry"
 description: "Cybersecurity analyst writing about threat detection, incident response, and defending real networks."
 tagline: "Hi, I'm Ian"
-bio: "I'm a cybersecurity analyst focused on detecting threats, investigating security events, and understanding the techniques attackers use to compromise systems. My work involves analyzing SIEM and log data, investigating suspicious activity, performing vulnerability assessments, and following incidents from initial detection to root-cause analysis. Im building a hands-on cybersecurity homelab using Proxmox, Docker, and containerized environments. The lab gives me a realistic environment to deploy and manage systems, experiment with networking and security tools, simulate attacks, generate telemetry, and develop detection and response capabilities"
+bio: "I got into cybersecurity after someone knocked my Xbox offline with a DDoS attack and I needed to know how. That curiosity turned into a career. I specialize in SIEM and log analysis, investigating suspicious activity, vulnerability assessments, and following incidents from detection to root cause."
 
 
 

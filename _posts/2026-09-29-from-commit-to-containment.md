@@ -9,7 +9,7 @@ image: /assets/images/aws-pipeline-2/01-architecture.png
 
 I built a pipeline on AWS that can answer one question most teams can't: which release was live when this attack started, and what did its security scans say?
 
-**TL;DR.** Every change to this lab is scanned by eight security gates, signed, and checked against policy before it runs on ECS Fargate. Every runtime event carries the release it came from, so an attack can be traced back to the exact build. When I attacked it myself, it detected me and blocked my IP automatically. Along the way, the pipeline caught a real vulnerability in my own code and refused to ship it.
+**TL;DR.** Every change to this lab is scanned by eight security gates, signed, and checked against policy before it runs on ECS Fargate. Every runtime event carries the release it came from, so an attack can be traced back to the exact build. When I attacked it myself, it detected me and blocked my IP automatically. 
 
 Code: [github.com/eguidey/aws-pipeline-2](https://github.com/eguidey/aws-pipeline-2)
 
@@ -105,30 +105,6 @@ To prove it, I opened a pull request that made the image tags mutable. The pipel
 The same rules file drives Terraform's own input validation, so a disallowed region fails before a plan even exists.
 
 {% include figure.html src="/assets/images/aws-pipeline-2/10-region-validation.png" alt="Terraform refusing the region eu-west-1 because it is not in the allowed regions list." caption="Terraform refusing a region that isn't on the approved list." %}
-
-## When the pipeline caught me
-
-The best test of a security gate is when it stops you. Mine did, twice, and the two findings taught me different lessons.
-
-### Finding 1: a real stored XSS
-
-OWASP ZAP saved a script payload through `POST /api/items`, then got it back unchanged from `GET /api/items`. My validation only checked that item names were 1 to 100 characters long. Any characters were stored and served to every client that listed the items.
-
-{% include figure.html src="/assets/images/aws-pipeline-2/15-dast-failure.png" alt="The OWASP ZAP step failing with a persistent cross-site scripting finding." caption="The DAST gate blocking my own release." %}
-
-The response was JSON with `nosniff`, so a browser wouldn't run it directly. But any client that rendered those names as HTML would. The fix was an allow-list: item names may contain letters, numbers, spaces and a little punctuation, and nothing that can start markup. I added tests with real payloads so the fix can't quietly regress.
-
-### Finding 2: a SQL injection that wasn't
-
-The next run failed on SQL injection. My API has no database, so this looked impossible. It was a false positive, but an instructive one.
-
-ZAP tests boolean-based injection by sending a "true" search (`AND '1'='1'`) and a "false" one (`AND '1'='2'`), then comparing the responses. My endpoint **ignored the `search` parameter entirely** and returned the whole list. ZAP's other tests were adding items at the same moment, so the two answers differed, and ZAP read that as the injection working.
-
-I could have suppressed the rule. Instead I fixed the real flaw it exposed: search now filters by name, and search terms get the same allow-list as names. The true and false probes now get identical answers, and there's a test proving it.
-
-{% include figure.html src="/assets/images/aws-pipeline-2/16-dast-pass.png" alt="The OWASP ZAP step passing with zero failures." caption="Green after both fixes." %}
-
-**The lesson:** triage the finding before you suppress it. Even the false positive pointed at a real bug.
 
 ## Runtime: a locked-down container that tells on attackers
 
@@ -228,8 +204,6 @@ What I'd build next:
 
 1. **Context is the product.** Any single control here is standard. The value came from one shared release version that ties the build, the scans and the runtime together.
 2. **Prevent where you can, detect where you must.** AWS Config catches drift after the fact. The policy gates stop the same mistakes before they exist, and I kept both.
-3. **Gates only matter if they can stop you.** The DAST gate blocked my own release twice. That's when I trusted it.
-4. **Triage before you suppress.** The SQL-injection false positive led straight to a real bug: a search parameter that did nothing.
-5. **Test detections like code.** Attacking my own deployment was the only way to know the alarms, the Lambda and the NACL actually connect.
+3. **Test detections like code.** Attacking my own deployment was the only way to know the alarms, the Lambda and the NACL actually connect.
 
 The code, Terraform and setup guide are on GitHub: [eguidey/aws-pipeline-2](https://github.com/eguidey/aws-pipeline-2). If you build on it, I'd like to hear what you change.

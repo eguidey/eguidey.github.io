@@ -1,11 +1,11 @@
 title: "Ian Guidry"
 author: "Ian Guidry"
-description: "Cybersecurity student and aspiring SOC analyst. Hands-on projects in detection engineering, cloud security and automation."
+description: "Cybersecurity student focused on security operations, cloud security and DevSecOps. Hands-on projects in detection engineering, AWS and automation."
 tagline: "Hi, I'm Ian"
-role: "Cybersecurity student · Aspiring SOC analyst"
-open_to_work: "Open to entry-level SOC analyst and security analyst roles."
+role: "Cybersecurity student · SOC, cloud security and DevSecOps"
+open_to_work: "Open to entry-level SOC analyst, cloud security and DevSecOps roles."
 intro: "I build hands-on security labs and write up what I learned: detections that fire, pipelines that block bad releases, and tools that make tickets faster to close."
-bio: "Cybersecurity student and aspiring SOC analyst. I build hands-on labs in detection engineering, cloud security and automation, and write up what I learned."
+bio: "Cybersecurity student focused on security operations, cloud security and DevSecOps. I build hands-on labs on AWS, write detections that fire, and document what I learned."
 
 # Put your résumé at assets/resume.pdf, then set this to "/assets/resume.pdf".
 # The Résumé button appears on the homepage and About page as soon as this is filled in.

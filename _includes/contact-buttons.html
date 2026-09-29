@@ -1,0 +1,6 @@
+<div class="cta-row">
+  {% if site.resume and site.resume != "" %}<a class="btn btn-primary" href="{{ site.resume | relative_url }}" target="_blank" rel="noopener">Résumé (PDF)</a>{% endif %}
+  {% if site.social.email != "" %}<a class="btn{% unless site.resume and site.resume != "" %} btn-primary{% endunless %}" href="mailto:{{ site.social.email }}">Email me</a>{% endif %}
+  {% if site.social.linkedin != "" %}<a class="btn" href="{{ site.social.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>{% endif %}
+  {% if site.social.github != "" %}<a class="btn" href="{{ site.social.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+</div>

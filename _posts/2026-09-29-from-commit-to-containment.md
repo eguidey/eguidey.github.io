@@ -5,6 +5,8 @@ description: "A pipeline that scans, signs and policy-checks every release, then
 categories: projects
 tags: [aws, devsecops, detection, projects]
 image: /assets/images/aws-pipeline-2/01-architecture.png
+stack: "GitHub Actions · Terraform · ECS Fargate · CloudWatch · Lambda · OWASP ZAP · cosign"
+code: "https://github.com/eguidey/aws-pipeline-2"
 ---
 
 I built a pipeline on AWS that can answer one question most teams can't: which release was live when this attack started, and what did its security scans say?

@@ -1,9 +1,15 @@
 title: "Ian Guidry"
 author: "Ian Guidry"
-description: "Cybersecurity analyst writing about threat detection, incident response, and defending real networks."
+description: "Cybersecurity student and aspiring SOC analyst. Hands-on projects in detection engineering, cloud security and automation."
 tagline: "Hi, I'm Ian"
-bio: "I got into cybersecurity after someone knocked my Xbox offline with a DDoS attack and I needed to know how. That curiosity turned into a career. I specialize in SIEM and log analysis, investigating suspicious activity, vulnerability assessments, and following incidents from detection to root cause."
+role: "Cybersecurity student · Aspiring SOC analyst"
+open_to_work: "Open to entry-level SOC analyst and security analyst roles."
+intro: "I build hands-on security labs and write up what I learned: detections that fire, pipelines that block bad releases, and tools that make tickets faster to close."
+bio: "Cybersecurity student and aspiring SOC analyst. I build hands-on labs in detection engineering, cloud security and automation, and write up what I learned."
 
+# Put your résumé at assets/resume.pdf, then set this to "/assets/resume.pdf".
+# The Résumé button appears on the homepage and About page as soon as this is filled in.
+resume: ""
 
 
 url: "https://ianguidry.com"
@@ -16,16 +22,12 @@ social:
   email: "ianguidryn1@gmail.com"
 
 nav:
-  - title: "About Me"
-    url: "/about/"
   - title: "Projects"
     url: "/projects/"
   - title: "Certifications"
     url: "/certifications/"
-  - title: "Tags"
-    url: "/tags/"
-
-featured_count: 5
+  - title: "About"
+    url: "/about/"
 
 permalink: /:categories/:year/:month/:day/:title.html
 markdown: kramdown

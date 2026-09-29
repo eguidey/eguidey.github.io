@@ -5,6 +5,8 @@ description: "A cross-platform command-line toolkit that turns the most common h
 categories: projects
 tags: [python, helpdesk, automation, projects]
 image: /assets/images/helpdesk-toolkit/report-example.png
+stack: "Python 3.10+ · Windows, macOS and Linux"
+code: "https://github.com/eguidey/Helpdesk-toolkit"
 ---
 
 Help desks hear the same tickets on repeat: "my computer is slow," "the internet is down," "I'm out of space," "new hires start Monday." I built a Python toolkit that answers each one with a single command, on Windows, macOS and Linux.

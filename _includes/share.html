@@ -1,10 +1,4 @@
 {% assign share_url = include.post.url | absolute_url | url_encode %}
-{% assign share_title = include.post.title | url_encode %}
 <div class="share">
-  <span>Share:</span>
-  <a href="https://twitter.com/intent/tweet?url={{ share_url }}&text={{ share_title }}" target="_blank" rel="noopener" title="Share on X">X</a>
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ share_url }}&title={{ share_title }}" target="_blank" rel="noopener" title="Share on LinkedIn">in</a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url }}" target="_blank" rel="noopener" title="Share on Facebook">f</a>
-  <a href="https://www.reddit.com/submit?url={{ share_url }}&title={{ share_title }}" target="_blank" rel="noopener" title="Share on Reddit">r/</a>
-  <a href="mailto:?subject={{ share_title }}&body={{ share_url }}" title="Share via Email">✉</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url }}" target="_blank" rel="noopener" title="Share on LinkedIn">Share on LinkedIn</a>
 </div>

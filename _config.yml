@@ -18,6 +18,8 @@ social:
 nav:
   - title: "About Me"
     url: "/about/"
+  - title: "Projects"
+    url: "/projects/"
   - title: "Certifications"
     url: "/certifications/"
   - title: "Tags"

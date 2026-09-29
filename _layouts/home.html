@@ -19,9 +19,12 @@ layout: default
   {% endfor %}
 </section>
 
+{% comment %}Only list posts that aren't already shown as cards above, and hide the section when there are none.{% endcomment %}
+{% if site.posts.size > site.featured_count %}
 <section class="archive">
   <h2>Previous Articles</h2>
-  {% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+  {% assign older = site.posts | slice: site.featured_count, site.posts.size %}
+  {% assign by_year = older | group_by_exp: "p", "p.date | date: '%Y'" %}
   {% for year in by_year %}
     <h3 class="year">{{ year.name }}</h3>
     <ul class="archive-list">
@@ -35,3 +38,4 @@ layout: default
     </ul>
   {% endfor %}
 </section>
+{% endif %}

@@ -1,3 +1,9 @@
+# Newest first.
+- name: "CompTIA Network+"
+  short: "Network+"
+  issuer: "CompTIA"
+  date: "May 2026"
+  verify: "https://www.credly.com/badges/b0ee2b68-9568-47c2-9d39-c9f79991da18"
 
 - name: "CompTIA Security Analytics Professional (CSAP)"
   short: "CSAP"
@@ -16,9 +22,3 @@
   issuer: "CompTIA"
   date: "April 2025"
   verify: "https://www.credly.com/badges/e34c0509-dd0c-490e-97c2-b556eea1e1f1"
-
-- name: "CompTIA Network+"
-  short: "Network+"
-  issuer: "CompTIA"
-  date: "May 2026"
-  verify: "https://www.credly.com/badges/b0ee2b68-9568-47c2-9d39-c9f79991da18"

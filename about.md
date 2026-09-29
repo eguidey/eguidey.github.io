@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-I'm **Ian Guidry**, a cybersecurity student looking for my first role in security operations, cloud security or DevSecOps. I got into security after someone knocked my Xbox offline with a DDoS attack and I needed to know how. I've been taking things apart to see how they break ever since.
+I'm **Ian Guidry**, a cybersecurity student looking for my first role in security operations, cloud security or DevSecOps. My interest in security started when my Xbox was taken offline by a DDoS attack and I wanted to understand how it worked. That curiosity grew into a focus on how systems fail and how to detect and stop attacks before they cause damage.
 
 {% include contact-buttons.html %}
 

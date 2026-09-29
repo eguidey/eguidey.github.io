@@ -1,0 +1,13 @@
+{%- comment -%}
+  Screenshot slot. Renders only if the image file exists, so a missing screenshot never shows a broken image.
+  Usage: {% include figure.html src="/assets/images/post/01.png" alt="What the image shows" caption="Caption text" %}
+{%- endcomment -%}
+{%- assign fig = site.static_files | where: "path", include.src | first -%}
+{%- if fig -%}
+<figure class="figure">
+  <a href="{{ include.src | relative_url }}"><img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy"></a>
+  {%- if include.caption %}
+  <figcaption>{{ include.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>
+  {%- endif %}
+</figure>
+{%- endif -%}

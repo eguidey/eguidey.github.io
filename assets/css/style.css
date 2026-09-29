@@ -148,3 +148,8 @@ img { max-width: 100%; height: auto; }
 .cert-card h3 { margin: .4rem 0 .5rem; font-size: 1.1rem; line-height: 1.35; }
 .cert-date { color: var(--muted); font-size: .88rem; margin-bottom: .8rem; }
 .cert-verify { font-weight: 600; font-size: .9rem; }
+
+/* Screenshots in posts */
+.figure { margin: 1.75rem 0; }
+.figure img { display: block; max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px; }
+.figure figcaption { font-family: var(--sans); font-size: .88rem; color: var(--muted); margin-top: .55rem; line-height: 1.5; }

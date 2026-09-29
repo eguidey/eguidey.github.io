@@ -1,48 +1,37 @@
 ---
 layout: default
 ---
-<section class="hero">
-  <p class="hero-role">{{ site.role }}</p>
-  <h1>{{ site.author }}</h1>
-  <p class="hero-intro">{{ site.intro }}</p>
-  {% if site.open_to_work and site.open_to_work != "" %}<p class="hero-status"><span class="dot" aria-hidden="true"></span>{{ site.open_to_work }}</p>{% endif %}
-  {% include contact-buttons.html %}
-  <div class="hero-certs">
-    {% for c in site.data.certifications %}<a class="cert-badge" href="{{ c.verify }}" target="_blank" rel="noopener" title="Verify {{ c.name }}">{{ c.short }}</a>{% endfor %}
-  </div>
+<section class="featured">
+  {% for post in site.posts limit: site.featured_count %}
+  <article class="card">
+    <div class="meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+      • {{ post.author | default: site.author }}
+      <span class="badge">{% include reading-time.html content=post.content %}</span>
+    </div>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 40 }}</p>
+    <div class="card-foot">
+      <a class="continue" href="{{ post.url | relative_url }}">Continue reading…</a>
+      {% include share.html post=post %}
+    </div>
+  </article>
+  {% endfor %}
 </section>
 
-{% assign projects = site.categories.projects %}
-{% if projects and projects.size > 0 %}
-<section class="home-section">
-  <div class="section-head">
-    <h2>Featured projects</h2>
-    <a class="more" href="{{ '/projects/' | relative_url }}">All projects →</a>
-  </div>
-  <div class="project-grid">
-    {% for post in projects %}
-    <article class="card project-card">
-      {% if post.image %}<a class="project-thumb" href="{{ post.url | relative_url }}"><img src="{{ post.image | relative_url }}" alt="" loading="lazy"></a>{% endif %}
-      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-      <p class="excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 32 }}</p>
-      {% if post.stack %}<p class="stack">{{ post.stack }}</p>{% endif %}
-      <div class="card-foot">
-        <a class="continue" href="{{ post.url | relative_url }}">Read the write-up →</a>
-        {% if post.code %}<a class="continue" href="{{ post.code }}" target="_blank" rel="noopener">View the code</a>{% endif %}
-      </div>
-    </article>
-    {% endfor %}
-  </div>
+<section class="archive">
+  <h2>All Articles</h2>
+  {% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+  {% for year in by_year %}
+    <h3 class="year">{{ year.name }}</h3>
+    <ul class="archive-list">
+      {% for post in year.items %}
+      <li>
+        <time>{{ post.date | date: "%b %d" }}</time>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="archive-tags">{% for t in post.tags %}<a class="tag small" href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">{{ t }}</a>{% endfor %}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 </section>
-{% endif %}
-
-{% capture writing %}{% for post in site.posts %}{% unless post.categories contains "projects" %}
-    <li><time>{{ post.date | date: "%b %d, %Y" }}</time> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endunless %}{% endfor %}{% endcapture %}
-{% assign writing_trimmed = writing | strip %}
-{% if writing_trimmed != "" %}
-<section class="home-section">
-  <div class="section-head"><h2>Writing</h2></div>
-  <ul class="archive-list">{{ writing }}
-  </ul>
-</section>
-{% endif %}

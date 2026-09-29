@@ -1,8 +1,16 @@
 <section class="widget bio">
   <h3>{{ site.tagline }}</h3>
   <p>{{ site.bio }}</p>
-  <a class="more" href="{{ '/about/' | relative_url }}">More about me →</a>
+  {% if site.open_to_work and site.open_to_work != "" %}<p class="bio-status"><span class="dot" aria-hidden="true"></span>{{ site.open_to_work }}</p>{% endif %}
+  {% if site.resume and site.resume != "" %}<a class="btn btn-primary bio-resume" href="{{ site.resume | relative_url }}" target="_blank" rel="noopener">Résumé (PDF)</a>{% endif %}
+  <a class="more" href="{{ '/about/' | relative_url }}">Read more →</a>
   {% include social-links.html %}
+  <div class="bio-certs">
+    <div class="cert-badges">
+      {% for c in site.data.certifications %}<a class="cert-badge" href="{{ c.verify }}" target="_blank" rel="noopener" title="Verify {{ c.name }}">{{ c.short }}</a>{% endfor %}
+    </div>
+    <a class="more" href="{{ '/certifications/' | relative_url }}">Certifications →</a>
+  </div>
 </section>
 
 <section class="widget">
@@ -16,9 +24,11 @@
 </section>
 
 <section class="widget">
-  <h3>Certifications</h3>
-  <div class="cert-badges">
-    {% for c in site.data.certifications %}<a class="cert-badge" href="{{ c.verify }}" target="_blank" rel="noopener" title="Verify {{ c.name }}">{{ c.short }}</a>{% endfor %}
+  <h3>Tags</h3>
+  <div class="tag-cloud">
+    {% assign tags = site.tags | sort %}
+    {% for tag in tags %}
+      <a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag[0] | slugify }}"><span class="count">{{ tag[1].size }}</span>{{ tag[0] }}</a>
+    {% endfor %}
   </div>
-  <a class="more" href="{{ '/certifications/' | relative_url }}">Verification links →</a>
 </section>

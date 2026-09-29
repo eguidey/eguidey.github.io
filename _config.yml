@@ -26,8 +26,12 @@ nav:
     url: "/projects/"
   - title: "Certifications"
     url: "/certifications/"
-  - title: "About"
+  - title: "About Me"
     url: "/about/"
+  - title: "Tags"
+    url: "/tags/"
+
+featured_count: 5
 
 permalink: /:categories/:year/:month/:day/:title.html
 markdown: kramdown

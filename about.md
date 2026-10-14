@@ -22,7 +22,7 @@ See the [projects page]({{ '/projects/' | relative_url }}) for the write-ups and
 
 ## Certifications
 
-CompTIA Security+, Network+, CySA+ and CSAP. See the [full list with verification links]({{ '/certifications/' | relative_url }}).
+CompTIA Security+, Network+, CySA+ and CSAP AWS Certified Cloud Practitioner. See the [full list with verification links]({{ '/certifications/' | relative_url }}).
 
 ## Get in touch
 

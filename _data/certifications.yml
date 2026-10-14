@@ -1,4 +1,10 @@
 # Newest first.
+- name: "AWS Certified Cloud Practitioner"
+  short: "AWS CCP"
+  issuer: "Amazon Web Services"
+  date: "October 2026"
+  verify: "https://www.credly.com/badges/8ec9a80d-370d-4ac4-882d-d8cabf267dcb"
+  
 - name: "CompTIA Network+"
   short: "Network+"
   issuer: "CompTIA"
